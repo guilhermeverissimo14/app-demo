@@ -4,6 +4,7 @@ export const theme = {
             300: "#FFFFFF",
             400: "#FBFBFB",
             500: "#F2F2F2",
+            600: "#F9F9F9"
         },
         primary: '#6759FF',
         secondary: "#CABDFF",

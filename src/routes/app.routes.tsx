@@ -7,7 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 import { Service } from '@/screens/service';
-import { Services } from '@/screens/services';
+import { Home } from '@/screens/home';
 import { SchedulesEmpty } from '@/screens/schedulesEmpty';
 import { Schedules } from '@/screens/schedules';
 import { NavigationContainer } from '@react-navigation/native';
@@ -55,7 +55,7 @@ const BottomTabs = () => {
 
             initialRouteName='Home'
         >
-            <Tab.Screen name="Home" component={Services} />
+            <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Schedules" component={Schedules} />
             {/* <Tab.Screen name="notification" component={() => null} />
             <Tab.Screen name="message" component={() => null} /> */}
