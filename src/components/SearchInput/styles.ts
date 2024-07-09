@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
         height: 50,
         flexDirection: "row",
         justifyContent: "space-between",
+        paddingLeft: 10
     },
     input: {
         width: "85%"

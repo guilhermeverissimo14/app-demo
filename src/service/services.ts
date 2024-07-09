@@ -1,0 +1,38 @@
+export const AcServicesData = [
+    {
+        id: '1',
+        image: require('@/assets/ac_checkup.png'),
+        rating: 4.8,
+        reviews: 87,
+        title: 'AC Check-Up',
+        description: 'Starts From',
+        price: 128,
+    },
+    {
+        id: '2',
+        image: require('@/assets/ac_regular_service.png'),
+        rating: 4.5,
+        reviews: 87,
+        title: 'AC Regular Service',
+        description: 'Starts From',
+        price: 128,
+    },
+    {
+        id: '3',
+        image: require('@/assets/ac_installation.png'),
+        rating: 4.5,
+        reviews: 87,
+        title: 'AC Installation',
+        description: 'Starts From',
+        price: 170,
+    },
+    {
+        id: '4',
+        image: require('@/assets/ac_uninstallation.png'),
+        rating: 4.5,
+        reviews: 87,
+        title: 'AC Uninstallation',
+        description: 'Starts From',
+        price: 170,
+    },
+];

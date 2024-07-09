@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-import { Service } from '@/screens/service';
+import { Service } from '@/screens/serviceScreen';
 import { Home } from '@/screens/home';
 import { SchedulesEmpty } from '@/screens/schedulesEmpty';
 import { Schedules } from '@/screens/schedules';
@@ -34,12 +34,12 @@ const BottomTabs = () => {
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 headerShown: false,
-                tabBarStyle: {
-                    backgroundColor: theme.colors.white,
-                    borderTopWidth: 0,
-                    height: Platform.OS === 'ios' ? 85 : 70,
-                    paddingBottom: Platform.OS === 'ios' ? 20 : 10,
-                },
+                // tabBarStyle: {
+                //     backgroundColor: theme.colors.white,
+                //     borderTopWidth: 0,
+                //     height: Platform.OS === 'ios' ? 85 : 70,
+                //     paddingBottom: Platform.OS === 'ios' ? 20 : 10,
+                // },
                 tabBarIcon: (color) => {
                     let iconName;
 

@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import AppRoutes from './src/routes/app.routes';
+import AppRoutes from '@/routes/app.routes';
+
 import {
   useFonts,
   Inter_400Regular,
@@ -7,6 +8,8 @@ import {
   Inter_600SemiBold,
   Inter_700Bold,
 } from '@expo-google-fonts/inter';
+
+import { theme } from '@/theme/theme';
 
 
 export default function App() {
@@ -25,7 +28,7 @@ export default function App() {
   return (
     <>
       <AppRoutes />
-      <StatusBar style="auto" />
+      <StatusBar style="auto" backgroundColor={theme.colors.white[300]} />
     </>
   );
 }
