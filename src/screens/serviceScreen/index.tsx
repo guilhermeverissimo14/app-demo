@@ -5,6 +5,7 @@ import Icon from '@expo/vector-icons/MaterialIcons';
 import { styles } from "./styles"
 import { Props } from "./serviceScreen";
 import { DataServices } from "../home/home";
+import { Footer } from "@/components/Footer";
 
 
 export const Service = ({ route }: Props) => {
@@ -55,6 +56,7 @@ export const Service = ({ route }: Props) => {
                     </View>
                 </ScrollView>
             </View>
+            <Footer />
         </View>
     );
 }
