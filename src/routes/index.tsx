@@ -20,6 +20,7 @@ const Stack = createNativeStackNavigator();
 export type RootStackParamList = {
     Home: undefined;
     Schedules: undefined;
+    Service: any;
 };
 
 declare global {
@@ -34,12 +35,12 @@ const BottomTabs = () => {
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 headerShown: false,
-                // tabBarStyle: {
-                //     backgroundColor: theme.colors.white,
-                //     borderTopWidth: 0,
-                //     height: Platform.OS === 'ios' ? 85 : 70,
-                //     paddingBottom: Platform.OS === 'ios' ? 20 : 10,
-                // },
+                tabBarStyle: {
+                    backgroundColor: "#ffffff",
+                    borderTopWidth: 0,
+                    height: Platform.OS === 'ios' ? 85 : 70,
+                    paddingBottom: Platform.OS === 'ios' ? 20 : 10,
+                },
                 tabBarIcon: (color) => {
                     let iconName;
 

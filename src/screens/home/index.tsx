@@ -1,4 +1,5 @@
 import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import Icon from '@expo/vector-icons/MaterialIcons';
 
 import { styles } from "./styles";
@@ -10,6 +11,7 @@ import { DataServices } from "./home";
 export const Home = () => {
 
     const [data, setData] = useState<DataServices[]>()
+    const navigation = useNavigation();
 
     const fetchData = () => {
         try {
@@ -25,9 +27,13 @@ export const Home = () => {
         fetchData();
     }, [data])
 
+    const serviceNavigation = (item: DataServices) => {
+        navigation.navigate('Service', item)
+    }
+
 
     const ServiceItem = ({ item }: { item: DataServices }) => (
-        <TouchableOpacity style={styles.itemContainer}>
+        <TouchableOpacity onPress={() => serviceNavigation(item)} style={styles.itemContainer}>
             <Image source={item.image} style={styles.image} />
             <View style={styles.infoContainer}>
                 <View style={styles.ratingContainer}>
@@ -55,7 +61,7 @@ export const Home = () => {
                             <Icon style={styles.iconList} name="list" size={28} />
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.iconGrid}>
-                            <Icon name="grid-view" size={25} color="blue" />
+                            <Icon name="grid-view" size={25} />
                         </TouchableOpacity>
                     </View>
                 </View>
