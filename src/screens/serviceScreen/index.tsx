@@ -1,6 +1,7 @@
 import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native"
 import { useEffect, useState } from "react";
 import Icon from '@expo/vector-icons/MaterialIcons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { styles } from "./styles"
 import { Props } from "./serviceScreen";
@@ -28,7 +29,6 @@ export const Service = ({ route }: Props) => {
 
     useEffect(() => {
         setDataService(params)
-        console.log(dataService)
     }, [dataService])
 
     return (
@@ -48,10 +48,28 @@ export const Service = ({ route }: Props) => {
             <View style={styles.contentService}>
                 <ScrollView style={styles.scroolMain}>
                     <View style={styles.boxPropertis}>
-                        <Text>Type of Property</Text>
-                        <View>
-                            <Icon name="home" size={25} />
-                            <Icon name="home" size={25} />
+                        <Text style={styles.textProperty}>Type of Property</Text>
+                        <View style={styles.contentIcons}>
+                            <View style={styles.boxIcons}>
+                                <TouchableOpacity style={styles.IconSecundary} >
+                                    <Icon name="home" color="#D1D3D4" size={25} />
+                                </TouchableOpacity>
+                                <Text>Home</Text>
+                            </View>
+
+                            <View style={styles.boxIcons}>
+                                <TouchableOpacity style={styles.IconPrimary}>
+                                    <MaterialCommunityIcons name="office-building-outline" color="#ffffff" size={25} />
+                                </TouchableOpacity>
+                                <Text>Office</Text>
+                            </View>
+
+                            <View style={styles.boxIcons}>
+                                <TouchableOpacity style={styles.IconSecundary}>
+                                    <Icon name="villa" color="#D1D3D4" size={25} />
+                                </TouchableOpacity>
+                                <Text>Vila</Text>
+                            </View>
                         </View>
                     </View>
                 </ScrollView>

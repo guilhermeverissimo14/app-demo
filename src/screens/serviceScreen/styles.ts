@@ -55,15 +55,52 @@ export const styles = StyleSheet.create({
         zIndex: 9,
         position: "relative"
     },
+
     scroolMain: {
         width: "90%",
-
     },
+
     boxPropertis: {
         width: "100%",
         backgroundColor: theme.colors.white[300],
-        elevation: 100,
+        elevation: 10,
         borderRadius: 8,
-        zIndex: 999,
+        padding: "5%",
+        marginTop: 8,
+        paddingTop: 20,
+
     },
+
+    textProperty: {
+        fontFamily: theme.fonts.Inter_700Bold,
+        fontSize: theme.size.mdl,
+        color: theme.colors.black,
+        borderLeftColor: theme.colors.secondary,
+        borderLeftWidth: 4,
+        paddingLeft: 10,
+        marginBottom: 10
+    },
+    contentIcons: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+        marginTop: 10,
+        paddingBottom: 20
+    },
+    boxIcons: {
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 10
+    },
+    IconSecundary: {
+        backgroundColor: theme.colors.white[300],
+        padding: 20,
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: theme.colors.gray[200]
+    },
+    IconPrimary: {
+        backgroundColor: theme.colors.primary,
+        padding: 20,
+        borderRadius: 10,
+    }
 });
