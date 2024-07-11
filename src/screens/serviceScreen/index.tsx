@@ -7,25 +7,35 @@ import { styles } from "./styles"
 import { Props } from "./serviceScreen";
 import { DataServices } from "../home/home";
 import { Footer } from "@/components/Footer";
+import { InputArea } from "@/components/InputArea";
 
 
 export const Service = ({ route }: Props) => {
 
     const params: Readonly<unknown> | any = route.params;
     const [dataService, setDataService] = useState<DataServices>()
+    const [countUnits, setCountUnits] = useState(0);
+    const [countBedrooms, setCountBedrooms] = useState(0);
 
-    const [units, setUnits] = useState(2);
-    const [bedrooms, setBedrooms] = useState(0);
+    const incrementCountUnits = () => {
+        setCountUnits(countUnits + 1);
+    };
 
+    const decrementCountUnits = () => {
+        if (countUnits > 0) {
+            setCountUnits(countUnits - 1);
+        }
+    };
 
+    const incrementCountBedrooms = () => {
+        setCountBedrooms(countBedrooms + 1);
+    };
 
-    const incrementUnits = () => setUnits(units + 1);
-    const decrementUnits = () => units > 0 && setUnits(units - 1);
-
-    const incrementBedrooms = () => setBedrooms(bedrooms + 1);
-    const decrementBedrooms = () => bedrooms > 0 && setBedrooms(bedrooms - 1);
-
-
+    const decrementCountBedrooms = () => {
+        if (countBedrooms > 0) {
+            setCountBedrooms(countBedrooms - 1);
+        }
+    };
 
     useEffect(() => {
         setDataService(params)
@@ -46,7 +56,7 @@ export const Service = ({ route }: Props) => {
             </View>
 
             <View style={styles.contentService}>
-                <ScrollView style={styles.scroolMain}>
+                <ScrollView showsVerticalScrollIndicator={false} style={styles.scroolMain}>
                     <View style={styles.boxPropertis}>
                         <Text style={styles.textProperty}>Type of Property</Text>
                         <View style={styles.contentIcons}>
@@ -71,6 +81,40 @@ export const Service = ({ route }: Props) => {
                                 <Text>Vila</Text>
                             </View>
                         </View>
+                    </View>
+                    <View style={styles.contentCounter}>
+                        <View style={styles.boxCounter}>
+
+                            <Text style={styles.titleCount}>Number of Units</Text>
+
+                            <View style={styles.boxButtonCount}>
+                                <TouchableOpacity style={styles.buttonDecrement} onPress={decrementCountUnits}>
+                                    <Text style={styles.textDecrement}> - </Text>
+                                </TouchableOpacity>
+                                <Text style={styles.textCount}>{countUnits}</Text>
+                                <TouchableOpacity style={styles.buttonIncrement} onPress={incrementCountUnits}>
+                                    <Text style={styles.textIncrement}> + </Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                        <View style={styles.boxCounter}>
+
+                            <Text style={styles.titleCount}>Number of Bedrooms</Text>
+
+                            <View style={styles.boxButtonCount}>
+                                <TouchableOpacity style={styles.buttonDecrement} onPress={decrementCountBedrooms}>
+                                    <Text style={styles.textDecrement}> - </Text>
+                                </TouchableOpacity>
+                                <Text style={styles.textCount}>{countBedrooms}</Text>
+                                <TouchableOpacity style={styles.buttonIncrement} onPress={incrementCountBedrooms}>
+                                    <Text style={styles.textIncrement}> + </Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.contentDescription}>
+                        <Text style={styles.titleDescription}>Description</Text>
+                        <InputArea label="Description" />
                     </View>
                 </ScrollView>
             </View>

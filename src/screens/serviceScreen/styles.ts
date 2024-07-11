@@ -1,5 +1,5 @@
 import { theme } from '@/theme/theme';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TextComponent } from 'react-native';
 
 export const styles = StyleSheet.create({
     container: {
@@ -58,17 +58,18 @@ export const styles = StyleSheet.create({
 
     scroolMain: {
         width: "90%",
+        // position: "absolute",
+        // zIndex: 50,
+        // top: -40
     },
 
     boxPropertis: {
         width: "100%",
         backgroundColor: theme.colors.white[300],
-        elevation: 10,
         borderRadius: 8,
         padding: "5%",
         marginTop: 8,
         paddingTop: 20,
-
     },
 
     textProperty: {
@@ -102,5 +103,78 @@ export const styles = StyleSheet.create({
         backgroundColor: theme.colors.primary,
         padding: 20,
         borderRadius: 10,
+    },
+    titleCount: {
+        fontFamily: theme.fonts.Inter_600,
+        fontSize: theme.size.md,
+        color: theme.colors.black
+    },
+    contentCounter: {
+        padding: "5%",
+        width: "100%",
+        backgroundColor: theme.colors.white[300],
+        borderRadius: 8,
+        marginTop: 10
+    },
+    boxCounter: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        borderBottomWidth: 1,
+        borderBottomColor: theme.colors.gray[200],
+        padding: 10
+    },
+    boxButtonCount: {
+        flexDirection: "row",
+        gap: 10,
+        alignItems: "center"
+    },
+    buttonDecrement: {
+        backgroundColor: theme.colors.white[300],
+        borderColor: theme.colors.gray[200],
+        borderWidth: 1,
+        borderRadius: 12,
+        width: 36,
+        height: 36,
+    },
+    textDecrement: {
+        textAlign: "center",
+        color: theme.colors.gray[200],
+        fontSize: theme.size.xl,
+        fontFamily: theme.fonts.Inter_700Bold
+    },
+    buttonIncrement: {
+        backgroundColor: theme.colors.primary,
+        borderColor: theme.colors.gray[200],
+        borderWidth: 1,
+        borderRadius: 12,
+        width: 36,
+        height: 36,
+    },
+    textIncrement: {
+        textAlign: "center",
+        color: theme.colors.white[300],
+        fontSize: theme.size.lg,
+        fontFamily: theme.fonts.Inter_700Bold
+    },
+    textCount: {
+        fontFamily: theme.fonts.Inter_600,
+        fontSize: theme.size.mdl
+    },
+    contentDescription: {
+        width: "100%",
+        backgroundColor: theme.colors.white[300],
+        borderRadius: 8,
+        padding: "5%",
+        marginTop: 10,
+        marginBottom: 10
+    },
+    titleDescription: {
+        borderLeftColor: theme.colors.secondary,
+        borderLeftWidth: 4,
+        paddingLeft: 10,
+        fontFamily: theme.fonts.Inter_700Bold,
+        fontSize: theme.size.mdl,
+        marginBottom: 10
     }
 });

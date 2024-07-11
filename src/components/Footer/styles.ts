@@ -8,7 +8,8 @@ export const styles = StyleSheet.create({
         backgroundColor: theme.colors.white[600],
         width: "100%",
         padding: 20,
-        gap: 10
+        gap: 10,
+        zIndex: 500,
     },
     boxDetails: {
         flexDirection: "row",
