@@ -13,27 +13,37 @@ Para a instalação desse projeto na sua máquina é necessario ter o node insta
 É necessario também um emulador por exemplo: o própio aplicativo do expo.
 
 ### 🔨 Guia de instalação
-Para clonar esse projeto na sua máquina é necessário instalar as seguintes bibliotecas.
+Para rodar esse projeto na sua máquina é necessário instalar as seguintes bibliotecas.
+
 Passo 1: Clonar o repositório
 Primeiro, clone o repositório para a sua máquina local. Abra o terminal e execute o comando:
+```bash
 git clone https://github.com/usuario/meu-app-react-native.git
 cd meu-app-react-native
-
+```
 Passo 2: Instalar Node.js
 Certifique-se de que você tem o Node.js versão 20 instalada. Você pode verificar sua versão do Node.js com o seguinte comando:
+```bash
 node -v
+```
 
 Passo 3: Instalar Expo CLI
 Expo CLI é uma ferramenta de linha de comando necessária para trabalhar com Expo. Instale-a globalmente usando npm:
+```bash
 npm install -g expo-cli
+```
 
 Passo 4: Instalar as dependências do projeto
 Dentro do diretório do projeto clonado, instale as dependências necessárias:
+```bash
 npm install
+```
 
 Passo 5: Iniciar o servidor de desenvolvimento
 Agora, você pode iniciar o servidor de desenvolvimento do Expo:
+```bash
 npm start
+```
 
 ## 📦 Tecnologias usadas:
 
