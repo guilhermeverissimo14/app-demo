@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Modal, Text, TouchableOpacity, View } from "react-native";
 import Icon from '@expo/vector-icons/MaterialIcons';
 
 import { styles } from "./styles";
