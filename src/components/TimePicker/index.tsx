@@ -16,7 +16,6 @@ export const TimePicker = ({ date, setDate }: TimePickerProps) => {
             const timestamp = event.nativeEvent.timestamp;
             const currentDate = new Date(timestamp);
             setShowTimePicker(Platform.OS === 'ios');
-            console.log("test", currentDate)
             setDate(currentDate);
         } else {
             setShowTimePicker(false);

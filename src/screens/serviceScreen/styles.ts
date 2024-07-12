@@ -62,18 +62,28 @@ export const styles = StyleSheet.create({
 
     scroolMain: {
         width: "90%",
-        // position: "absolute",
-        // zIndex: 50,
-        // top: -40
+        marginTop: 100
     },
 
-    boxPropertis: {
-        width: "100%",
+    absolute: {
+        width: "90%",
         backgroundColor: theme.colors.white[300],
         borderRadius: 8,
         padding: "5%",
         marginTop: 8,
         paddingTop: 20,
+    },
+
+    boxPropertis: {
+        width: "90%",
+        backgroundColor: theme.colors.white[300],
+        borderRadius: 8,
+        padding: "5%",
+        marginTop: 8,
+        paddingTop: 20,
+        position: "absolute",
+        zIndex: 50,
+        top: -40
     },
 
     textProperty: {

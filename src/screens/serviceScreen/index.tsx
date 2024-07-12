@@ -68,32 +68,33 @@ export const Service = ({ route }: Props) => {
             </View>
 
             <View style={styles.contentService}>
-                <ScrollView showsVerticalScrollIndicator={false} style={styles.scroolMain}>
-                    <View style={styles.boxPropertis}>
-                        <Text style={styles.textProperty}>Type of Property</Text>
-                        <View style={styles.contentIcons}>
-                            <View style={styles.boxIcons}>
-                                <TouchableOpacity style={styles.IconSecundary} >
-                                    <Icon name="home" color="#D1D3D4" size={25} />
-                                </TouchableOpacity>
-                                <Text>Home</Text>
-                            </View>
+                <View style={styles.boxPropertis}>
+                    <Text style={styles.textProperty}>Type of Property</Text>
+                    <View style={styles.contentIcons}>
+                        <View style={styles.boxIcons}>
+                            <TouchableOpacity style={styles.IconSecundary} >
+                                <Icon name="home" color="#D1D3D4" size={25} />
+                            </TouchableOpacity>
+                            <Text>Home</Text>
+                        </View>
 
-                            <View style={styles.boxIcons}>
-                                <TouchableOpacity style={styles.IconPrimary}>
-                                    <MaterialCommunityIcons name="office-building-outline" color="#ffffff" size={25} />
-                                </TouchableOpacity>
-                                <Text>Office</Text>
-                            </View>
+                        <View style={styles.boxIcons}>
+                            <TouchableOpacity style={styles.IconPrimary}>
+                                <MaterialCommunityIcons name="office-building-outline" color="#ffffff" size={25} />
+                            </TouchableOpacity>
+                            <Text>Office</Text>
+                        </View>
 
-                            <View style={styles.boxIcons}>
-                                <TouchableOpacity style={styles.IconSecundary}>
-                                    <Icon name="villa" color="#D1D3D4" size={25} />
-                                </TouchableOpacity>
-                                <Text>Vila</Text>
-                            </View>
+                        <View style={styles.boxIcons}>
+                            <TouchableOpacity style={styles.IconSecundary}>
+                                <Icon name="villa" color="#D1D3D4" size={25} />
+                            </TouchableOpacity>
+                            <Text>Vila</Text>
                         </View>
                     </View>
+                </View>
+                <ScrollView showsVerticalScrollIndicator={false} style={styles.scroolMain}>
+                    <View style={styles.absolute} />
                     <View style={styles.contentCounter}>
                         <View style={styles.boxCounter}>
 

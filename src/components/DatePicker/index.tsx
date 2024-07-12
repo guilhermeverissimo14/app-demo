@@ -17,16 +17,11 @@ export const DatePicker = ({ date, setDate }: DatePickerProps) => {
             const timestamp = event.nativeEvent.timestamp;
             const currentDate = new Date(timestamp);
             setShowDatePicker(Platform.OS === 'ios');
-            console.log("test", currentDate)
             setDate(currentDate);
         } else {
             setShowDatePicker(false);
         }
     };
-
-    useEffect(() => {
-        console.log(date)
-    }, [date]);
 
     return (
         <View>
