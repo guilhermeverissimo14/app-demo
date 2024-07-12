@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { InputArea } from '.';
 import { theme } from '@/theme/theme';
 
 export const styles = StyleSheet.create({

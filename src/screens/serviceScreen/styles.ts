@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
     header: {
         top: 0,
         width: '100%',
-        backgroundColor: 'red',
         marginTop: 30,
         flex: 0.4,
         zIndex: 1,
@@ -17,7 +16,13 @@ export const styles = StyleSheet.create({
     headerImage: {
         width: '100%',
         height: "100%",
-        zIndex: 1,
+    },
+
+    containerHeader: {
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        backgroundColor: 'rgba(0, 0, 0, 0.4)',
     },
 
     contentHeader: {
@@ -27,7 +32,6 @@ export const styles = StyleSheet.create({
         width: "100%",
         paddingLeft: "3%",
         gap: 20,
-        zIndex: 1,
     },
 
     rating: {
@@ -175,6 +179,5 @@ export const styles = StyleSheet.create({
         paddingLeft: 10,
         fontFamily: theme.fonts.Inter_700Bold,
         fontSize: theme.size.mdl,
-        marginBottom: 10
     }
 });

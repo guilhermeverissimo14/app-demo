@@ -1,13 +1,15 @@
-import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native"
+import { Image, Modal, ScrollView, Text, TouchableOpacity, View } from "react-native"
 import { useEffect, useState } from "react";
 import Icon from '@expo/vector-icons/MaterialIcons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native";
 
 import { styles } from "./styles"
 import { Props } from "./serviceScreen";
 import { DataServices } from "../home/home";
 import { Footer } from "@/components/Footer";
 import { InputArea } from "@/components/InputArea";
+import { ModalSchedule } from "@/components/ModalShedule";
 
 
 export const Service = ({ route }: Props) => {
@@ -16,6 +18,9 @@ export const Service = ({ route }: Props) => {
     const [dataService, setDataService] = useState<DataServices>()
     const [countUnits, setCountUnits] = useState(0);
     const [countBedrooms, setCountBedrooms] = useState(0);
+    const [modalVisible, setModalVisible] = useState(false);
+
+    const navigation = useNavigation();
 
     const incrementCountUnits = () => {
         setCountUnits(countUnits + 1);
@@ -39,7 +44,12 @@ export const Service = ({ route }: Props) => {
 
     useEffect(() => {
         setDataService(params)
-    }, [dataService])
+
+    }, [dataService, modalVisible])
+
+    function openModal() {
+        setModalVisible(true)
+    }
 
     return (
         <View style={styles.container}>
@@ -48,10 +58,12 @@ export const Service = ({ route }: Props) => {
                     source={{ uri: 'https://s3-alpha-sig.figma.com/img/c88c/d0f0/e38bd9f4e9ddaa793e4a9977de62dce4?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dnDwrUeR2VmkNmwxVivfasZjt3scX8CS2qTtHkzKGA34MAE6vQP1jtK9dZzBPd-LfZh2fGUHzxGzUp-t2xhsAoUCXDg5qhrUO8tdb1Se2-uogRpO7kf2yhPJ~jiBBvLDVnE0xmYsRcndhefo305Nq9VL1sB-qbzb0jmwqr8kyyGhYfEmDuU8AFovB9ly~OfRZ8yosMRzqFJO5Xh-5W-YVU2ySxoSIj3nv0RYWbD7r13oDXpnNImlxBsU5q1vPCx9CzB14yEuq5R5jAVm5uyuwp7mSgDV-Q9cdGjQCe1WCYrnDCxZBlX7Tx2OMnwBf05Ud8NuIa~94L-kkPaTsqwGzg__' }}
                     style={styles.headerImage}
                 />
-                <View style={styles.contentHeader}>
 
-                    <Text style={styles.rating}>⭐ {dataService?.rating}</Text>
-                    <Text style={styles.headerTitle}>{dataService?.title}</Text>
+                <View style={styles.containerHeader}>
+                    <View style={styles.contentHeader}>
+                        <Text style={styles.rating}>⭐ {dataService?.rating}</Text>
+                        <Text style={styles.headerTitle}>{dataService?.title}</Text>
+                    </View>
                 </View>
             </View>
 
@@ -118,7 +130,11 @@ export const Service = ({ route }: Props) => {
                     </View>
                 </ScrollView>
             </View>
-            <Footer />
+            <Footer
+                onPressSave={() => navigation.navigate("Home")}
+                onPressBook={openModal}
+            />
+            <ModalSchedule visible={modalVisible} setModalVisible={setModalVisible} />
         </View>
     );
 }

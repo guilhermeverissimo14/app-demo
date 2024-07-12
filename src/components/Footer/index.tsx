@@ -5,7 +5,12 @@ import Icon from '@expo/vector-icons/MaterialIcons';
 import { ButtonPrimary } from "../ButtonPrimary"
 import { styles } from "./styles"
 
-export const Footer = () => {
+export interface FooterProps {
+    onPressSave?: () => void;
+    onPressBook?: () => void;
+}
+
+export const Footer = ({ onPressSave, onPressBook }: FooterProps) => {
 
     const [billDetails, setBillDetails] = useState(true);
 
@@ -35,10 +40,12 @@ export const Footer = () => {
             </View>
             <View style={styles.contentButtons}>
                 <ButtonPrimary
+                    onPress={onPressSave}
                     label="Save Draft"
                     otherButtonStyles={styles.buttonSave}
                 />
                 <ButtonPrimary
+                    onPress={onPressBook}
                     label="Book Now"
                     otherButtonStyles={styles.buttonBook}
                     otherTextStyles={styles.textButton}
