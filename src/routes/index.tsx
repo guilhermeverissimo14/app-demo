@@ -1,6 +1,7 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import Icon from '@expo/vector-icons/MaterialIcons';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faBell, faFile, faHome, faMessage } from '@fortawesome/free-solid-svg-icons';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -8,10 +9,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { Service } from '@/screens/serviceScreen';
 import { Home } from '@/screens/home';
-import { SchedulesEmpty } from '@/screens/schedulesEmpty';
 import { Schedules } from '@/screens/schedules';
 import { NavigationContainer } from '@react-navigation/native';
-import { theme } from '@/theme/theme';
+import { Notification } from '@/screens/notification';
+import { Messages } from '@/screens/messages';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -35,22 +36,27 @@ const BottomTabs = () => {
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 headerShown: false,
+                tabBarShowLabel: false,
                 tabBarStyle: {
                     backgroundColor: "#ffffff",
                     borderTopWidth: 0,
                     height: Platform.OS === 'ios' ? 85 : 70,
                     paddingBottom: Platform.OS === 'ios' ? 20 : 10,
                 },
-                tabBarIcon: (color) => {
+                tabBarIcon: ({ focused, color, size }) => {
                     let iconName;
 
                     if (route.name === 'Home') {
-                        iconName = "home"
+                        iconName = faHome;
                     } else if (route.name === 'Schedules') {
-                        iconName = "event"
+                        iconName = faFile;
+                    } else if (route.name === 'notification') {
+                        iconName = faBell;
+                    } else if (route.name === 'message') {
+                        iconName = faMessage;
                     }
 
-                    return <Icon name={iconName as any} size={32} color={theme.colors.primary} />
+                    return <FontAwesomeIcon icon={iconName as any} size={24} color={focused ? "#6759FF" : "#535763"} />
                 },
             })}
 
@@ -58,8 +64,8 @@ const BottomTabs = () => {
         >
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Schedules" component={Schedules} />
-            {/* <Tab.Screen name="notification" component={() => null} />
-            <Tab.Screen name="message" component={() => null} /> */}
+            <Tab.Screen name="notification" component={Notification} />
+            <Tab.Screen name="message" component={Messages} />
 
         </Tab.Navigator>
     )
@@ -71,7 +77,6 @@ export default function AppRoutes() {
             <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='BottomTabs'>
                 <Stack.Screen name="BottomTabs" component={BottomTabs} />
                 <Stack.Screen name="Service" component={Service} />
-                <Stack.Screen name="schedulesEmpty" component={SchedulesEmpty} />
             </Stack.Navigator>
         </NavigationContainer>
     );

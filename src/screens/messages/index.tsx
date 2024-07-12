@@ -1,9 +1,9 @@
 import { Text, View } from "react-native"
 
-export const Schedule = () => {
+export const Messages = () => {
     return (
         <View>
-            <Text>Bem vindo a tela de Agendamentos </Text>
+            <Text>Em desenvolvimento</Text>
         </View>
     )
 }
