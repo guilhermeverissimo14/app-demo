@@ -11,11 +11,14 @@ import IconUnion from "@/assets/Union.png"
 import IconWesting from "@/assets/hestingHouse.png"
 import IconMulti from "@/assets/icon-multi.png"
 import IconSidenayu from "@/assets/sidenaiyu.png"
+import { useNavigation } from "@react-navigation/native";
 
 
 export const Schedules = () => {
     const [upcomingState, setUpcomingState] = useState(true)
     const [emptyDataState, setEmptyDataState] = useState(false)
+
+    const navigation = useNavigation()
 
     const stateUpcoming = () => {
         setUpcomingState(true);
@@ -152,6 +155,7 @@ export const Schedules = () => {
                         </View>
 
                         <ButtonPrimary
+                            onPress={() => navigation.navigate("Home")}
                             otherTextStyles={styles.textButtonView}
                             otherButtonStyles={styles.buttonViewServices}
                             label="View all services"

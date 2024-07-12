@@ -179,5 +179,6 @@ export const styles = StyleSheet.create({
         paddingLeft: 10,
         fontFamily: theme.fonts.Inter_700Bold,
         fontSize: theme.size.mdl,
+        marginBottom: 20
     }
 });

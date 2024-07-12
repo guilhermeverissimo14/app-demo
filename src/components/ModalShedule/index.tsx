@@ -2,14 +2,19 @@ import React, { useState } from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
 import Icon from '@expo/vector-icons/MaterialIcons';
 
+
 import { styles } from "./styles";
 import { ModalSheduleProps } from "./modalSchedule";
 import { ButtonPrimary } from "../ButtonPrimary";
+import { DatePicker } from "../DatePicker";
+import { TimePicker } from "../TimePicker";
 
 
 export const ModalSchedule = ({ visible, setModalVisible }: ModalSheduleProps) => {
 
     const [billDetails, setBillDetails] = useState(true);
+
+    const [date, setDate] = useState(new Date());
 
     const showBillDetails = () => setBillDetails(!billDetails);
 
@@ -29,9 +34,10 @@ export const ModalSchedule = ({ visible, setModalVisible }: ModalSheduleProps) =
                     </View>
 
                     <View>
-                        <Text>DATA</Text>
-
+                        <DatePicker date={date} setDate={setDate} />
+                        <TimePicker date={date} setDate={setDate} />
                     </View>
+
 
                     <View style={styles.boxDetails}>
                         {billDetails && (
@@ -55,6 +61,7 @@ export const ModalSchedule = ({ visible, setModalVisible }: ModalSheduleProps) =
                     </View>
                     <View style={styles.contentButtons}>
                         <ButtonPrimary
+                            onPress={() => setModalVisible(false)}
                             label="Continue"
                             otherButtonStyles={styles.buttonSave}
                         />

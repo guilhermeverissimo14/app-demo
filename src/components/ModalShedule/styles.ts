@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     },
     modalView: {
         backgroundColor: theme.colors.white[300],
-        height: "40%",
+        height: "50%",
         width: "100%",
         shadowColor: '#000',
         shadowOffset: {
@@ -24,12 +24,17 @@ export const styles = StyleSheet.create({
     },
     boxTextTitle: {
         flexDirection: "row",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        marginBottom: 20
     },
     textTitle: {
+        textAlign: "center",
         color: theme.colors.black,
-        fontFamily: theme.fonts.Inter_600,
-        fontSize: theme.size.mdl
+        fontFamily: theme.fonts.Inter_700Bold,
+        fontSize: theme.size.mdl,
+        paddingLeft: 15,
+        borderLeftWidth: 4,
+        borderColor: theme.colors.secondary
     },
     buttonClose: {
         backgroundColor: theme.colors.white[700],
@@ -74,6 +79,7 @@ export const styles = StyleSheet.create({
         color: theme.colors.orange[500],
     },
     contentButtons: {
+        marginTop: 20,
         flexDirection: "row",
         justifyContent: "space-evenly",
         alignItems: "center",
@@ -89,5 +95,35 @@ export const styles = StyleSheet.create({
     },
     textButton: {
         color: theme.colors.white[300],
-    }
+    },
+
+    containerDate: {
+        flex: 1,
+        justifyContent: 'center',
+        padding: 16,
+    },
+    pickerContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 16,
+        borderRadius: 8,
+        marginBottom: 20,
+    },
+    dateContainer: {
+        backgroundColor: '#FFC1A1',
+    },
+    timeContainer: {
+        backgroundColor: '#C1E7C1',
+    },
+    textContainer: {
+        marginLeft: 16,
+    },
+    label: {
+        fontSize: 12,
+        color: '#4F4F4F',
+    },
+    text: {
+        fontSize: 18,
+        color: '#4F4F4F',
+    },
 });
