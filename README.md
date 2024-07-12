@@ -6,7 +6,7 @@ Aplicativo de demostração.
 
 ## 🔥 Introdução
 
-Aplicativo tem o intuito de mostrar para os usuários a interface de um aplicativo de venda de serviços.
+Esse projeto tem o intuito de mostrar para os usuários a interface de um aplicativo de venda de serviços.
 
 ### ⚙️ Pré-requisitos
 Para a instalação desse projeto na sua máquina é necessario ter o node instalado apartir da versão 20. 
