@@ -10,7 +10,7 @@ Esse projeto tem o intuito de mostrar para os usuários a interface de um aplica
 
 ### ⚙️ Pré-requisitos
 Para a instalação desse projeto na sua máquina é necessario ter o node instalado apartir da versão 20. 
-É necessario também um emulador por exemplo: o propio aplicativo do expo ou android studio.
+É necessario também um emulador por exemplo: o própio aplicativo do expo.
 
 ### 🔨 Guia de instalação
 Para clonar esse projeto na sua máquina é necessário instalar as seguintes bibliotecas.
